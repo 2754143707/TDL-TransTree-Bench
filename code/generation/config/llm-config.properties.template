@@ -1,0 +1,72 @@
+# LLM Configuration (template)
+# Copy to llm-config.properties if you need a fresh file.
+# The repository already ships config/llm-config.properties with YOUR_* placeholders.
+# Replace placeholders with real keys locally; do not commit real secrets.
+
+# Active LLM
+llm.active=deepseek
+
+# Toolchain Settings
+toolchain.maxRetries=3
+toolchain.enableSyntaxPreCheck=true
+
+# DeepSeek
+llm.deepseek.name=DeepSeekV3.2
+llm.deepseek.apiBase=https://dashscope.aliyuncs.com/compatible-mode/v1
+llm.deepseek.apiKey=YOUR_DEEPSEEK_API_KEY_HERE
+llm.deepseek.model=deepseek-v3.2
+llm.deepseek.temperature=0.2
+llm.deepseek.maxTokens=4096
+llm.deepseek.type=dsl-generation
+llm.deepseek.enabled=true
+
+# Qwen
+llm.qwen.name=Qwen Plus
+llm.qwen.apiBase=https://dashscope.aliyuncs.com/compatible-mode/v1
+llm.qwen.apiKey=YOUR_QWEN_API_KEY_HERE
+llm.qwen.model=qwen-plus
+llm.qwen.temperature=0.2
+llm.qwen.maxTokens=4096
+llm.qwen.type=dsl-generation
+llm.qwen.enabled=true
+
+# Doubao-Seed-1.6-flash
+llm.doubao-dsl.name=Doubao-Seed-1.6-flash
+llm.doubao-dsl.apiBase=https://ark.cn-beijing.volces.com/api/v3/chat/completions
+llm.doubao-dsl.apiKey=YOUR_DOUBAO_API_KEY_HERE
+llm.doubao-dsl.model=YOUR_DOUBAO_MODEL_ID_HERE
+llm.doubao-dsl.temperature=0.2
+llm.doubao-dsl.maxTokens=4096
+llm.doubao-dsl.type=dsl-generation
+llm.doubao-dsl.enabled=true
+
+# Doubao-Seedream-4.5
+llm.doubao-image.name=Doubao-Seedream-4.5
+llm.doubao-image.apiBase=https://ark.cn-beijing.volces.com/api/v3/images/generations
+llm.doubao-image.apiKey=YOUR_DOUBAO_IMAGE_API_KEY_HERE
+llm.doubao-image.model=doubao-seedream-4-5-251128
+llm.doubao-image.temperature=0.2
+llm.doubao-image.maxTokens=4096
+llm.doubao-image.type=image-annotation
+llm.doubao-image.enabled=true
+
+# Gemini (local proxy)
+llm.gemini.name=Gemini Pro
+llm.gemini.apiBase=http://127.0.0.1:8317/v1/chat/completions
+llm.gemini.apiKey=YOUR_GEMINI_API_KEY_HERE
+llm.gemini.model=gemini-claude-sonnet-4-5
+llm.gemini.temperature=0.2
+llm.gemini.maxTokens=4096
+llm.gemini.type=dsl-generation
+llm.gemini.enabled=true
+
+# Gemini 3 Pro Image Preview (local proxy)
+llm.gemini-image.name=Gemini 3 Pro Image Preview
+llm.gemini-image.apiBase=http://127.0.0.1:8317/v1/chat/completions
+llm.gemini-image.apiKey=YOUR_GEMINI_API_KEY_HERE
+llm.gemini-image.model=gemini-3-pro-image-preview
+llm.gemini-image.temperature=0.3
+llm.gemini-image.maxTokens=4096
+llm.gemini-image.type=image-annotation
+llm.gemini-image.enabled=true
+

@@ -1,0 +1,2 @@
+# TDL-TransTree-Bench evaluation script uses Python 3.8+ standard library only.
+# No third-party packages are required.

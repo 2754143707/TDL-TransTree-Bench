@@ -1,0 +1,15 @@
+# Build artifacts
+code/generation/target/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Local secrets (if you replace placeholders with real keys)
+# code/generation/config/llm-config.properties

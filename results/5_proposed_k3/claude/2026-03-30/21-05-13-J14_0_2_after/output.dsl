@@ -1,0 +1,99 @@
+Message J14_0 Translation Trees {
+    ACTION {
+        A. "DISCARD MESSAGE"
+        B. "FWD M.6A"
+        C. "FWD M.9F(AC=0)/M.89F(AC=0)"
+        D. "FWD M.9F(AC=0)/M.89F(AC=0)/M.9F(AC=1)"
+        E. "FWD M.6B/M.86B(EV SW=0)"
+        F. "FWD M.5/M.85"
+        G. "GO TO TEST NODE 10"
+        H. "FWD M.6C/M.86C"
+        I. "FWD M.6C"
+        J. "FWD M.6B/M.86B (EV SW=1)"
+        K. "GO TO TEST NODE 15"
+        L. "FWD APPROPRIATE INITIAL SEQUENCE"
+        M. "GO TO TEST NODE 12"
+        Z. "END TRANSLATION"
+
+
+}
+CONDITION {
+    N1: "FIX OR BEARING DESCRIPTOR (F/B) = 6 OR TN, REFERENCE/INDEX NUMBER INDICATOR = 1"
+    N2: "F/B = 4"
+    N3: "BEARING ORIGIN = 1"
+    N4: "F/B = 1"
+    N5: "AREA MAJOR AXIS, AREA MINOR AXIS OR SQUARE/CIRCLE SWITCH = NO STATEMENT OR UNDEFINED"
+    N6: "COURSE OR SPEED = NO STATEMENT"
+    N7: "F/B = 5"
+    N8: "F/B = 0"
+    N9: "PARAMETER SOURCE = 3 OR 4"
+    N10: "J14.OC4 WORD INCLUDED"
+    N11: "POLARIZATION, PULSE WIDTH, OR ANTENNA SCAN RATE/PERIOD INDICATOR NOT EQUAL TO 0"
+    N12: "FREQUENCY DATA INCLUDED"
+    N13: "EMITTER NUMBER INDICATOR = 1"
+    N14: "F/B = 0"
+    N15: "SPECIAL PROCESSING INDICATOR HAS CHANGED, THIS IS INITIAL REPORT FROM THE DATA SOURCE, OR RESPONSE INDICATOR = 1"
+}
+IF (N1) {
+    EXECUTE(A, Z)
+}
+ELSE {
+    IF (N2) {
+        EXECUTE(B, Z)
+
+
+}
+ELSE {
+    IF (N3) {
+        EXECUTE(A, Z)
+
+
+}
+ELSE {
+    IF (N4) {
+        EXECUTE(C, K, Z)
+
+
+}
+ELSE {
+    IF (N5) {
+        EXECUTE(D, K, Z)
+
+
+}
+ELSE {
+    IF (N6) {
+        EXECUTE(E, K)
+
+
+}
+ELSE {
+    IF (N7) {
+        EXECUTE(F, K)
+
+
+}
+ELSE {
+    IF (N8) {
+        EXECUTE(A, K)
+
+
+}
+ELSE {
+    IF (N9) {
+        EXECUTE(G, K)
+
+
+}
+ELSE {
+    EXECUTE(G, K)
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

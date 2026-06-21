@@ -1,0 +1,8 @@
+解析结果: 失败
+错误数量: 5
+错误列表:
+- ❌ [语法错误] 行 214:0 -> mismatched input '}' expecting {')', ','}
+- ❌ [语法错误] 行 219:0 -> mismatched input 'else' expecting {')', ','}
+- ❌ [语法错误] 行 225:0 -> mismatched input '}' expecting {')', ','}
+- ❌ [语法错误] 行 226:0 -> mismatched input 'else' expecting {')', ','}
+- ❌ [语法错误] 行 235:0 -> mismatched input '}' expecting {')', ','}

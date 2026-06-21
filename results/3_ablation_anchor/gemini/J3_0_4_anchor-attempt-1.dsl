@@ -1,0 +1,29 @@
+Message J3.0 Translation Trees {
+    ACTION {
+        A. DISCARD MESSAGE.
+        K. FWD M.4A/M.84A.
+        M. FWD M.4B.
+        Q. FWD M.9F(AC=0)/M.89F(AC=0).
+        R. FWD M.9F(AC=1).
+        S. COMBINE DATA WITH PRECEDING J3.0 HAVING REMAINING TIME DATA.
+        Z. END TRANSLATION.
+
+
+}
+CONDITION {
+    26: TIME FUNCTION = 2.
+    27: COURSE, SPEED, OR TN, RELATED OTHER THAN NO STATEMENT.
+}
+IF (26) {
+    EXECUTE(K, M, S, Z)
+}
+ELSE {
+    EXECUTE(A, Z)
+}
+IF (27) {
+    EXECUTE(Q, R, Z)
+}
+ELSE {
+    EXECUTE(Q, Z)
+}
+}

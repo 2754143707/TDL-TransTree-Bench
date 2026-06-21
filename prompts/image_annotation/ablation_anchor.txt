@@ -1,0 +1,52 @@
+任务配置:
+  任务名称: 逻辑节点图视觉对齐标注 (Ablation-Anchor)
+  模型角色: 视觉对齐引擎 (Visual Alignment Engine)
+  执行模式: 严格确定性模式 (Strict Deterministic Mode)
+  核心技术: 矢量坐标锚定 (Vector Coordinate Anchoring)
+
+图像结构定义 (Image Structure Definition):
+  组成部分: 上方逻辑树区域 + 下方动作矩阵列区域
+  区域边界: 两者之间有两条明显的横线分隔
+  坐标系逻辑: 以原图像素为绝对坐标系，严禁进行图像裁剪或缩放。
+
+防幻觉与数据保真协议 (Data Fidelity Protocol):
+  图层叠加逻辑:
+    背景层 (Layer 0): 原始图像为刚性底板。
+    原始内容完整性: 严格维持原图中所有数字、字母、线条及布局的完整性，仅添加新的单色对齐线。
+  零幻觉约束 (Zero Hallucination):
+    禁止造字: 空白区域必须保留原本的像素值。
+    禁止位移: 严禁为了美观而移动底部字符的位置。
+
+稳定性协议 (Stability Protocol):
+  坐标锁定 (Coordinate Locking):
+    X轴锁定: 锁定逻辑节点中心的X轴坐标，强制垂直线严格沿此X轴下落。
+    Y轴锁定 (绝对底边): 必须识别图像物理结构上最底端的一行字符，将其顶部边缘作为所有线条的统一终止水平线。
+  矢量化思维:
+    请像绘图仪（Plotter）一样思考。线条必须是数学意义上的长直线，具有固定的笔触宽度（推荐 2px）。
+
+核心视觉绘制规则:
+  几何约束:
+    正交投影: 线条仅允许垂直(90度)或水平(0度)绘制。
+    视觉风格: 纯黑色 (#000000) 高对比度细实线，无阴影，无发光特效。不区分 'Y' 或 'N' 路径，所有辅助线样式完全一致。
+
+终点锚定机制 (Terminal Anchor Logic):
+  强制穿透逻辑 (Penetration Rule):
+    逻辑定义: 动作矩阵区域中，除最底端一行外的中间字符，仅视为路径上的节点，绝非终点。
+    执行动作: 线条必须在视觉上“穿过”或“连接”该列出现的中间字符，继续向下延伸。
+  绝对终点判定 (Absolute Endpoint):
+    锚点锁定: 忽略中间所有的字符阻挡，直接寻找该列在图像物理最底端 (Physical Bottom Row) 的字符。
+    连接规则: 黑色线条必须一直画到这个最底端字符的上方，形成一条贯穿全图的长垂直线。
+
+思维链推理序列 (Chain-of-Thought):
+  Step 1: 全局扫描，锁定图像最底端的一行字符，将其Y坐标设为全局终止线 (Global Bottom Line)。
+  Step 2: 冻结上方所有逻辑节点的输出端口坐标 (X_start, Y_start)。
+  Step 3: 对每个节点执行“射线投射”：从 (X_start, Y_start) 发射纯黑色射线，直接指向 Global Bottom Line。
+  Step 4: 即使射线上遇到其他中间字母，也不停止，继续延伸直至 Global Bottom Line。
+
+负向约束 (Negative Constraints):
+  禁止使用任何彩色 (NO RED OR GREEN COLORS, ONLY BLACK)
+  禁止画箭头 (NO ARROWHEADS)
+  禁止避让中间的字符 (必须穿过去)
+  禁止线条在中间字符处断开线条
+  禁止产生随机噪点或伪影
+  禁止改变原图的灰度或对比度

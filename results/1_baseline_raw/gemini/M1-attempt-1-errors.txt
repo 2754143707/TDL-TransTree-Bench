@@ -1,0 +1,5 @@
+解析结果: 失败
+错误数量: 2
+错误列表:
+- ❌ [语法错误] 行 33:8 -> mismatched input 'IF' expecting {')', ','}
+- ❌ [语法错误] 行 42:16 -> mismatched input 'ELSE' expecting {')', ','}

@@ -1,0 +1,5 @@
+解析结果: 失败
+错误数量: 2
+错误列表:
+- ❌ [语法错误] 行 224:0 -> missing '}' at 'ELSE'
+- ❌ [语法错误] 行 232:0 -> mismatched input 'ELSE' expecting {')', ','}

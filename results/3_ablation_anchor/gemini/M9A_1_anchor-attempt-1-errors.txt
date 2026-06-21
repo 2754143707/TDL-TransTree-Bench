@@ -1,0 +1,5 @@
+解析结果: 失败
+错误数量: 2
+错误列表:
+- ❌ [语法错误] 行 1:0 -> missing 'Message' at 'json'
+- ❌ [语法错误] 行 1:5 -> mismatched input 'n' expecting 'Translation'

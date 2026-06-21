@@ -1,0 +1,4 @@
+解析结果: 失败
+错误数量: 1
+错误列表:
+- ❌ [语法错误] 行 1:35 -> mismatched input '{' expecting 'Translation'

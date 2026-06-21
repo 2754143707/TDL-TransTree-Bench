@@ -1,0 +1,67 @@
+Message J3_0 Translation Trees {
+    ACTION {
+        A. "DISCARD MESSAGE."
+        B. "FWD APPROPRIATE INITIAL SEQUENCE."
+        H. "GO TO NEXT NUMERICAL TEST NODE."
+        Z. "END TRANSLATION."
+
+
+}
+CONDITION {
+    Node1: "EXERCISE INDICATOR = 1."
+    Node2: "PERIODIC REPORT INDICATOR = 2 WITH COURSE OR SPEED = NO STATEMENT."
+    Node3: "POINT TYPE OR POINT AMPLIFICATION IS UNDEFINED OR HAS NO LINK 11/11B EQUIVALENT."
+    Node4: "LINE/AREA CONTINUATION INDICATOR = 1."
+    Node5: "POINT/LINE/AREA DESCRIPTOR, 1 = 2."
+    Node6: "THIS IS INITIAL REPORT FROM DATA SOURCE FOR THIS TN."
+    Node7: "SPECIAL PROCESSING INDICATOR HAS CHANGED."
+}
+IF (Node1) {
+    EXECUTE(A, Z)
+}
+ELSE {
+    IF (Node2) {
+        EXECUTE(A, Z)
+
+
+}
+ELSE {
+    IF (Node3) {
+        EXECUTE(A, Z)
+
+
+}
+ELSE {
+    IF (Node4) {
+        EXECUTE(A, Z)
+
+
+}
+ELSE {
+    IF (Node5) {
+        EXECUTE(A, Z)
+
+
+}
+ELSE {
+    IF (Node6) {
+        EXECUTE(B, H)
+
+
+}
+ELSE {
+    IF (Node7) {
+        EXECUTE(B, H)
+
+
+}
+ELSE {
+    EXECUTE(H)
+}
+}
+}
+}
+}
+}
+}
+}

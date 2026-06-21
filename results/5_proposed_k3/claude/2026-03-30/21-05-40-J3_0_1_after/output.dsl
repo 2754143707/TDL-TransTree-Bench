@@ -1,0 +1,51 @@
+Message J3_0 Translation Trees {
+    ACTION {
+        A."DISCARD MESSAGE"
+        B."FWD APPROPRIATE INITIAL SEQUENCE"
+        C."FWD M.5"
+        Z."END TRANSLATION"
+
+
+}
+CONDITION {
+    N1:"EXERCISE INDICATOR = 1"
+    N2:"PERIODIC REPORT INDICATOR = 2 WITH COURSE OR SPEED = NO STATEMENT"
+    N3:"POINT TYPE OR POINT AMPLIFICATION IS UNDEFINED OR HAS NO LINK 11/11B EQUIVALENT"
+    N4:"LINE/AREA CONTINUATION INDICATOR = 1"
+    N5:"POINT/LINE/AREA DESCRIPTOR, 1 = 2"
+}
+IF (N1) {
+    EXECUTE(B, Z)
+}
+ELSE {
+    IF (N2) {
+        EXECUTE(C, Z)
+
+
+}
+ELSE {
+    IF (N3) {
+        EXECUTE(C, Z)
+
+
+}
+ELSE {
+    IF (N4) {
+        EXECUTE(C, Z)
+
+
+}
+ELSE {
+    IF (N5) {
+        EXECUTE(C, Z)
+
+
+}
+ELSE {
+    EXECUTE(A, Z)
+}
+}
+}
+}
+}
+}

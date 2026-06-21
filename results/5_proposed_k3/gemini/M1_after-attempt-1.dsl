@@ -1,0 +1,75 @@
+Message M_1_Part1 Translation Trees {
+    ACTION {
+        A. "DISCARD MESSAGE."
+        B. "FWD POSITION FOR UNIT BASED ON RELATED M.5."
+        C. "GO TO TEST NODE 3."
+        D. "REDUNDANTLY FWD J2.0 UNTIL UNIT BECOMES INACTIVE."
+        E. "DECLARE THE UNIT ACTIVE."
+        F. "FWD A SINGLE J2.0."
+        G. "FWD ALL DATA FOLLOWING THE M.1 (OR M.1/ M.81) WITH M.1 PU/RU ADDRESS AS SOURCE."
+        H. "SET SPI = 1 IN ALL MESSAGES WHICH FOLLOW THIS M.1."
+        J. "GO TO TEST NODE 6."
+        K. "SET INDICATOR TO REINITIATE J2.0C1 WORD."
+        L. "FWD J7.5 (ACT = 3)."
+        Z. "END TRANSLATION."
+
+
+}
+CONDITION {
+    1: "RECEIVED M.1 IDENTICAL TO ANOTHER M.1. RECEIVED IN THE SAME TRANSMIT OPPORTUNITY."
+    2: "R/P = 1."
+    3: "RECEIVED M.1 IS FROM LINK 11B."
+    4: "UNIT IS INACTIVE IN FJU DATABASE OR THIS IS INITIAL REPORT."
+    5: "SPI = 0."
+    6: "NEXT RECEIVED MESSAGE IS M.11D OR M.11D/ M.11D MESSAGE SEQUENCE HAVING NONZERO CODES FOR PU/RU SOURCE."
+    7: "TYPE REPORT = 0."
+}
+IF (1) {
+    EXECUTE(A, Z)
+}
+ELSE {
+    IF (2) {
+        EXECUTE(B, C)
+
+
+}
+ELSE {
+    IF (3) {
+        IF (4) {
+            EXECUTE(D, E, J)
+
+
+    }
+    ELSE {
+        EXECUTE(A, J)
+
+
+}
+}
+ELSE {
+    IF (4) {
+        IF (5) {
+            EXECUTE(F, G, J)
+
+
+    }
+    ELSE {
+        EXECUTE(E, F, G, H, J)
+
+
+}
+}
+ELSE {
+    IF (5) {
+        EXECUTE(F, G, J)
+
+
+}
+ELSE {
+    EXECUTE(F, G, H, J)
+}
+}
+}
+}
+}
+}

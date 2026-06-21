@@ -1,0 +1,1 @@
+{"id":"QJ_DaYG6FubesbwP8KbkyAY","object":"chat.completion","created":1774427968,"model":"gemini-2.5-flash","choices":[{"index":0,"message":{"role":"assistant","content":"","reasoning_content":null,"tool_calls":null},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"total_tokens":9802,"prompt_tokens":8059,"completion_tokens_details":{"reasoning_tokens":1743}}}

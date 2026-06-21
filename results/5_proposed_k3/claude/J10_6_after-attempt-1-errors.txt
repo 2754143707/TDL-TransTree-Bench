@@ -1,0 +1,20 @@
+解析结果: 失败
+错误数量: 17
+错误列表:
+- ❌ [语法错误] 行 3:10 -> missing STRING_LITERAL at 'DISCARD'
+- ❌ [语法错误] 行 3:18 -> extraneous input 'MESSAGE' expecting '.'
+- ❌ [语法错误] 行 4:8 -> missing STRING_LITERAL at 'B'
+- ❌ [语法错误] 行 4:10 -> missing STRING_LITERAL at 'FWD'
+- ❌ [语法错误] 行 4:14 -> extraneous input 'M' expecting '.'
+- ❌ [语法错误] 行 4:16 -> missing STRING_LITERAL at '9'
+- ❌ [语法错误] 行 4:17 -> extraneous input 'B' expecting '.'
+- ❌ [语法错误] 行 5:8 -> missing STRING_LITERAL at 'Z'
+- ❌ [语法错误] 行 5:10 -> missing STRING_LITERAL at 'END'
+- ❌ [语法错误] 行 5:14 -> extraneous input 'TRANSLATION' expecting '.'
+- ❌ [语法错误] 行 8:0 -> missing STRING_LITERAL at '}'
+- ❌ [语法错误] 行 10:7 -> missing STRING_LITERAL at 'PAIRING'
+- ❌ [语法错误] 行 10:15 -> mismatched input 'ACTION' expecting ':'
+- ❌ [语法错误] 行 10:26 -> mismatched input '7' expecting ':'
+- ❌ [语法错误] 行 10:28 -> mismatched input 'OR' expecting ':'
+- ❌ [语法错误] 行 10:31 -> mismatched input '15' expecting ':'
+- ❌ [语法错误] 行 10:33 -> mismatched input '.' expecting ':'
